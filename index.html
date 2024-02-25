@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau Visualizations</title>
+    <script type='module' src='https://prod-useast-b.online.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js'></script>
+</head>
+<body>
+    <h1>Earthquake Visualizations</h1>
+    
+    <h2>Visualization 1: Earthquake Data Sheet</h2>
+    <tableau-viz id='tableau-viz-1'
+                 src='https://prod-useast-b.online.tableau.com/t/globaltech/views/ALLEARTHQUAKES/Sheet4'
+                 width='1440'
+                 height='739'
+                 hide-tabs
+                 toolbar='bottom'>
+    </tableau-viz>
+    
+    <h2>Visualization 2: Earthquake Dashboard</h2>
+    <tableau-viz id='tableau-viz-2'
+                 src='https://prod-useast-b.online.tableau.com/t/globaltech/views/ALLEARTHQUAKES/Dashboard2'
+                 width='1000'
+                 height='840'
+                 hide-tabs
+                 toolbar='bottom'>
+    </tableau-viz>
+</body>
+</html>
