@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Zip Code</title>
+</head>
+<body>
+    <script>
+        async function getZipCode(lat, lon) {
+            const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
+            
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.address && data.address.postcode) {
+                    return data.address.postcode;
+                } else {
+                    return null;
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                return null;
+            }
+        }
+
+        // Example coordinates (San Francisco)
+        const latitude = 37.7749;
+        const longitude = -122.4194;
+
+        getZipCode(latitude, longitude)
+            .then(zipCode => {
+                console.log('Zip Code:', zipCode);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    </script>
+</body>
+</html>
